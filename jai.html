@@ -16,7 +16,6 @@
   >
 
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/jai.css">
 </head>
 
 <body data-page="jai">
@@ -33,11 +32,6 @@
         </p>
 
         <h1>Jenis Asing Invasif pada Ikan di Indonesia</h1>
-
-        <p class="jai-page__hero-description">
-          Ikan Sapu-sapu • Alligator Gar • Peacock Bass • Red Devil •
-          Nila • Mujair dan jenis lainnya yang perlu dipantau.
-        </p>
 
         <p class="jai-page__hero-note">
           Kajian berdasarkan peraturan perundang-undangan,
@@ -323,21 +317,20 @@
           <button
             class="jai-category-card reveal"
             type="button"
-            data-jai-open="payau-laut"
+            data-jai-open="zona-pengawasan"
           >
             <span class="jai-category-card__icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M2 8c3-2 5-2 8 0s5 2 8 0 4-2 4-2"></path>
-                <path d="M2 13c3-2 5-2 8 0s5 2 8 0 4-2 4-2"></path>
-                <path d="M2 18c3-2 5-2 8 0s5 2 8 0 4-2 4-2"></path>
+                <path d="M12 21s7-6.1 7-13a7 7 0 1 0-14 0c0 6.9 7 13 7 13Z"></path>
+                <circle cx="12" cy="8" r="2.5"></circle>
               </svg>
             </span>
 
-            <h3>Ikan Air Payau dan Laut</h3>
+            <h3>Zona Pengawasan</h3>
 
             <p>
-              Jenis ikan asing yang berpotensi masuk melalui
-              perdagangan, budidaya, transportasi, atau pelepasan.
+              Titik strategis pengawasan BKHIT Lampung pada pelabuhan,
+              bandara, dan jalur pengiriman komoditas perikanan.
             </p>
 
             <strong>Lihat detail <span aria-hidden="true">→</span></strong>
@@ -409,164 +402,328 @@
         </header>
 
         <div class="jai-detail-modal__species-grid">
-          <article
-            class="jai-species-card"
-            style="--species-image:url('assets/images/jai/sapu-sapu.webp')"
-          >
-            <div class="jai-species-card__image"></div>
-            <div class="jai-species-card__body">
-              <span>Air tawar</span>
-              <h3>Ikan Sapu-sapu</h3>
-              <em>Pterygoplichthys spp.</em>
-              <p>
-                Memiliki kemampuan adaptasi tinggi dan dapat
-                mendominasi habitat tertentu.
-              </p>
-            </div>
-          </article>
+  <article class="jai-species-card">
+    <div class="jai-species-card__image">
+      <img src="assets/images/jai/sapu-sapu.jpg" alt="Ikan Sapu-sapu" loading="lazy">
+    </div>
+    <div class="jai-species-card__body">
+      <span>Invasif Bentik</span>
+      <h3>Ikan Sapu-sapu</h3>
+      <em>Pterygoplichthys pardalis</em>
+      <p class="jai-species-card__summary">
+        Ikan asal Amerika Selatan dengan tubuh berlapis pelat keras
+        dan kemampuan adaptasi yang tinggi pada berbagai kondisi perairan.
+      </p>
+      <details class="jai-species-card__detail" name="fish-detail">
+        <summary>
+          <span>Lihat detail</span>
+          <span class="jai-species-card__detail-arrow" aria-hidden="true">+</span>
+        </summary>
+        <dl class="jai-species-card__facts">
+          <div>
+            <dt>Habitat</dt>
+            <dd>Sungai, kanal, waduk, dan perairan berlumpur dengan arus lambat hingga sedang.</dd>
+          </div>
+          <div>
+            <dt>Karakteristik</dt>
+            <dd>Hidup di dasar perairan, memakan alga dan material organik, serta mampu bertahan pada kadar oksigen rendah.</dd>
+          </div>
+          <div>
+            <dt>Risiko ekologis</dt>
+            <dd>Populasi padat dapat berkompetisi dengan ikan lokal, mengubah rantai makanan, serta memicu erosi tebing melalui aktivitas membuat liang.</dd>
+          </div>
+          <div>
+            <dt>Fokus pengawasan</dt>
+            <dd>Pelepasan ikan peliharaan, penyebaran di perairan umum, dan peningkatan populasi pada sungai serta waduk.</dd>
+          </div>
+        </dl>
+      </details>
+    </div>
+  </article>
 
-          <article
-            class="jai-species-card"
-            style="--species-image:url('assets/images/jai/alligator-gar.webp')"
-          >
-            <div class="jai-species-card__image"></div>
-            <div class="jai-species-card__body">
-              <span>Predator</span>
-              <h3>Alligator Gar</h3>
-              <em>Atractosteus spatula</em>
-              <p>
-                Predator berukuran besar yang berpotensi menekan
-                populasi ikan lokal.
-              </p>
-            </div>
-          </article>
+  <article class="jai-species-card">
+    <div class="jai-species-card__image">
+      <img src="assets/images/jai/aligator.jpg" alt="Alligator Gar" loading="lazy">
+    </div>
+    <div class="jai-species-card__body">
+      <span>Predator Besar</span>
+      <h3>Alligator Gar</h3>
+      <em>Atractosteus spatula</em>
+      <p class="jai-species-card__summary">
+        Ikan predator besar asal Amerika Utara dengan moncong panjang,
+        rahang kuat, dan tubuh yang dilindungi sisik keras.
+      </p>
+      <details class="jai-species-card__detail" name="fish-detail">
+        <summary>
+          <span>Lihat detail</span>
+          <span class="jai-species-card__detail-arrow" aria-hidden="true">+</span>
+        </summary>
+        <dl class="jai-species-card__facts">
+          <div>
+            <dt>Habitat</dt>
+            <dd>Sungai besar, rawa, danau, estuari, serta perairan tawar hingga payau yang relatif tenang.</dd>
+          </div>
+          <div>
+            <dt>Karakteristik</dt>
+            <dd>Memangsa ikan dan organisme perairan lain serta mampu tumbuh hingga ukuran yang sangat besar.</dd>
+          </div>
+          <div>
+            <dt>Risiko ekologis</dt>
+            <dd>Apabila dilepaskan, keberadaannya berpotensi menambah tekanan predasi terhadap komunitas ikan lokal.</dd>
+          </div>
+          <div>
+            <dt>Fokus pengawasan</dt>
+            <dd>Perdagangan ikan hias predator, kepemilikan, pemindahan, dan pencegahan pelepasan ke perairan umum.</dd>
+          </div>
+        </dl>
+      </details>
+    </div>
+  </article>
 
-          <article
-            class="jai-species-card"
-            style="--species-image:url('assets/images/jai/peacock-bass.webp')"
-          >
-            <div class="jai-species-card__image"></div>
-            <div class="jai-species-card__body">
-              <span>Predator</span>
-              <h3>Peacock Bass</h3>
-              <em>Cichla spp.</em>
-              <p>
-                Predator aktif yang dapat bersaing dan memangsa
-                organisme lokal.
-              </p>
-            </div>
-          </article>
+  <article class="jai-species-card">
+    <div class="jai-species-card__image">
+      <img src="assets/images/jai/bass.jpg" alt="Peacock Bass" loading="lazy">
+    </div>
+    <div class="jai-species-card__body">
+      <span>Predator Introduksi</span>
+      <h3>Peacock Bass</h3>
+      <em>Cichla spp.</em>
+      <p class="jai-species-card__summary">
+        Kelompok ikan predator asal Amerika Selatan yang aktif berburu
+        dan dikenal memiliki pola tubuh serta warna yang mencolok.
+      </p>
+      <details class="jai-species-card__detail" name="fish-detail">
+        <summary>
+          <span>Lihat detail</span>
+          <span class="jai-species-card__detail-arrow" aria-hidden="true">+</span>
+        </summary>
+        <dl class="jai-species-card__facts">
+          <div>
+            <dt>Habitat</dt>
+            <dd>Danau, waduk, kanal, dan sungai berair hangat dengan banyak struktur tempat berlindung.</dd>
+          </div>
+          <div>
+            <dt>Karakteristik</dt>
+            <dd>Mengandalkan penglihatan untuk memburu ikan kecil dan organisme perairan lainnya.</dd>
+          </div>
+          <div>
+            <dt>Risiko ekologis</dt>
+            <dd>Berpotensi menambah tekanan predasi dan kompetisi, terutama pada perairan dengan ikan endemik atau ikan lokal berukuran kecil.</dd>
+          </div>
+          <div>
+            <dt>Fokus pengawasan</dt>
+            <dd>Perdagangan ikan hias dan ikan pancing, perpindahan antarperairan, serta pelepasan secara sengaja.</dd>
+          </div>
+        </dl>
+      </details>
+    </div>
+  </article>
 
-          <article
-            class="jai-species-card"
-            style="--species-image:url('assets/images/jai/red-devil.webp')"
-          >
-            <div class="jai-species-card__image"></div>
-            <div class="jai-species-card__body">
-              <span>Cichlid</span>
-              <h3>Red Devil</h3>
-              <em>Amphilophus labiatus</em>
-              <p>
-                Bersifat teritorial dan perlu dicegah agar tidak
-                tersebar bebas.
-              </p>
-            </div>
-          </article>
+  <article class="jai-species-card">
+    <div class="jai-species-card__image">
+      <img src="assets/images/jai/red.jpg" alt="Red Devil" loading="lazy">
+    </div>
+    <div class="jai-species-card__body">
+      <span>Cichlid Agresif</span>
+      <h3>Red Devil</h3>
+      <em>Amphilophus labiatus</em>
+      <p class="jai-species-card__summary">
+        Ikan cichlid asal Amerika Tengah dengan warna mencolok,
+        perilaku teritorial, dan kemampuan mempertahankan wilayah hidupnya.
+      </p>
+      <details class="jai-species-card__detail" name="fish-detail">
+        <summary>
+          <span>Lihat detail</span>
+          <span class="jai-species-card__detail-arrow" aria-hidden="true">+</span>
+        </summary>
+        <dl class="jai-species-card__facts">
+          <div>
+            <dt>Habitat</dt>
+            <dd>Danau, waduk, dan perairan tenang dengan substrat berbatu atau area yang dapat digunakan untuk berkembang biak.</dd>
+          </div>
+          <div>
+            <dt>Karakteristik</dt>
+            <dd>Bersifat agresif, menjaga telur dan anak, serta memakan ikan kecil, moluska, serangga, dan organisme dasar.</dd>
+          </div>
+          <div>
+            <dt>Risiko ekologis</dt>
+            <dd>Berpotensi mendominasi habitat, berkompetisi memperoleh makanan dan ruang, serta menekan keanekaragaman ikan lokal.</dd>
+          </div>
+          <div>
+            <dt>Fokus pengawasan</dt>
+            <dd>Pelepasan ikan akuarium, penyebaran antardanau atau waduk, serta perkembangan populasi pada perairan umum.</dd>
+          </div>
+        </dl>
+      </details>
+    </div>
+  </article>
 
-          <article
-            class="jai-species-card"
-            style="--species-image:url('assets/images/jai/nila.webp')"
-          >
-            <div class="jai-species-card__image"></div>
-            <div class="jai-species-card__body">
-              <span>Budidaya</span>
-              <h3>Nila</h3>
-              <em>Oreochromis niloticus</em>
-              <p>
-                Komoditas budidaya yang tetap membutuhkan
-                pengelolaan pelepasan.
-              </p>
-            </div>
-          </article>
+  <article class="jai-species-card">
+    <div class="jai-species-card__image">
+      <img src="assets/images/jai/nila.jpg" alt="Ikan Nila" loading="lazy">
+    </div>
+    <div class="jai-species-card__body">
+      <span>Introduksi Budidaya</span>
+      <h3>Ikan Nila</h3>
+      <em>Oreochromis niloticus</em>
+      <p class="jai-species-card__summary">
+        Ikan asal Afrika yang menjadi komoditas budidaya penting,
+        tetapi penyebarannya di luar fasilitas budidaya tetap perlu dikelola.
+      </p>
+      <details class="jai-species-card__detail" name="fish-detail">
+        <summary>
+          <span>Lihat detail</span>
+          <span class="jai-species-card__detail-arrow" aria-hidden="true">+</span>
+        </summary>
+        <dl class="jai-species-card__facts">
+          <div>
+            <dt>Habitat</dt>
+            <dd>Kolam, danau, waduk, sungai berarus lambat, dan berbagai perairan hangat dengan ketersediaan makanan tinggi.</dd>
+          </div>
+          <div>
+            <dt>Karakteristik</dt>
+            <dd>Mudah beradaptasi, memanfaatkan beragam jenis makanan, dan dapat berkembang biak dalam berbagai kondisi.</dd>
+          </div>
+          <div>
+            <dt>Risiko ekologis</dt>
+            <dd>Populasi lepas yang tidak terkendali berpotensi berkompetisi dan mengubah struktur komunitas perairan.</dd>
+          </div>
+          <div>
+            <dt>Fokus pengawasan</dt>
+            <dd>Pencegahan ikan keluar dari fasilitas budidaya, pemindahan benih, dan pelepasan ke kawasan konservasi.</dd>
+          </div>
+        </dl>
+      </details>
+    </div>
+  </article>
 
-          <article
-            class="jai-species-card"
-            style="--species-image:url('assets/images/jai/mujair.webp')"
-          >
-            <div class="jai-species-card__image"></div>
-            <div class="jai-species-card__body">
-              <span>Budidaya</span>
-              <h3>Mujair</h3>
-              <em>Oreochromis mossambicus</em>
-              <p>
-                Perlu dipantau persebarannya pada perairan alami
-                dan kawasan konservasi.
-              </p>
-            </div>
-          </article>
-        </div>
+  <article class="jai-species-card">
+    <div class="jai-species-card__image">
+      <img src="assets/images/jai/mujair.jpg" alt="Ikan Mujair" loading="lazy">
+    </div>
+    <div class="jai-species-card__body">
+      <span>Introduksi Adaptif</span>
+      <h3>Ikan Mujair</h3>
+      <em>Oreochromis mossambicus</em>
+      <p class="jai-species-card__summary">
+        Ikan asal Afrika dengan toleransi lingkungan tinggi yang telah
+        tersebar luas melalui kegiatan budidaya dan perpindahan oleh manusia.
+      </p>
+      <details class="jai-species-card__detail" name="fish-detail">
+        <summary>
+          <span>Lihat detail</span>
+          <span class="jai-species-card__detail-arrow" aria-hidden="true">+</span>
+        </summary>
+        <dl class="jai-species-card__facts">
+          <div>
+            <dt>Habitat</dt>
+            <dd>Sungai, waduk, rawa, kanal, tambak, muara, dan perairan payau dengan kondisi lingkungan yang bervariasi.</dd>
+          </div>
+          <div>
+            <dt>Karakteristik</dt>
+            <dd>Tahan terhadap perubahan salinitas, suhu, dan kadar oksigen serta memiliki kemampuan reproduksi yang baik.</dd>
+          </div>
+          <div>
+            <dt>Risiko ekologis</dt>
+            <dd>Berpotensi membentuk populasi padat, berkompetisi dengan ikan lokal, dan melakukan persilangan dengan tilapia lain.</dd>
+          </div>
+          <div>
+            <dt>Fokus pengawasan</dt>
+            <dd>Penyebaran pada sungai dan kawasan konservasi, pemindahan ikan hidup, serta kebocoran dari fasilitas budidaya.</dd>
+          </div>
+        </dl>
+      </details>
+    </div>
+  </article>
+</div>
       </div>
 
       <!-- PAYAU DAN LAUT -->
       <div
         class="jai-detail-modal__content"
-        data-jai-content="payau-laut"
+        data-jai-content="zona-pengawasan"
         hidden
       >
         <header class="jai-detail-modal__header">
-          <span>Perairan Pesisir</span>
-          <h2>Ikan Air Payau dan Laut</h2>
+          <span>Wilayah Kerja BKHIT Lampung</span>
+          <h2>Zona Pengawasan</h2>
 
           <p>
-            Pengawasan difokuskan pada jalur perdagangan,
-            budidaya, transportasi, dan pelepasan ke alam.
+            Pengawasan dilakukan pada titik-titik strategis lalu lintas
+            komoditas perikanan dan media pembawa di Provinsi Lampung.
           </p>
         </header>
 
-        <div class="jai-detail-modal__info-grid">
-          <article>
-            <span class="jai-detail-modal__info-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 19h16"></path>
-                <path d="M6 19V9h12v10"></path>
-                <path d="M3 9 12 3l9 6"></path>
-              </svg>
-            </span>
-            <h3>Jalur Masuk</h3>
-            <p>
-              Perdagangan, transportasi media pembawa, aktivitas
-              budidaya, dan pelepasan ikan.
-            </p>
-          </article>
+        <div class="jai-detail-modal__info-grid jai-detail-modal__info-grid--zones">
+  <article class="jai-zone-card">
+    <div class="jai-zone-card__image">
+      <img src="assets/images/zona/pelabuhan-panjang.jpg" alt="Pelabuhan Panjang" loading="lazy">
+    </div>
+    <div class="jai-zone-card__body">
+      <span class="jai-detail-modal__info-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 16 3 11h18l-2 5"></path>
+          <path d="M8 11V6h8v5"></path>
+          <path d="M10 6V3h4v3"></path>
+          <path d="M3 19c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1"></path>
+        </svg>
+      </span>
+      <h3>Pelabuhan Panjang</h3>
+      <p>Pelabuhan laut utama untuk pengawasan kegiatan ekspor-impor komoditas perikanan dan media pembawa.</p>
+    </div>
+  </article>
 
-          <article>
-            <span class="jai-detail-modal__info-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 21s7-6.1 7-13a7 7 0 1 0-14 0c0 6.9 7 13 7 13Z"></path>
-                <circle cx="12" cy="8" r="2.5"></circle>
-              </svg>
-            </span>
-            <h3>Area Pengawasan</h3>
-            <p>
-              Pelabuhan, estuari, kawasan pesisir, tempat budidaya,
-              dan perairan laut.
-            </p>
-          </article>
+  <article class="jai-zone-card">
+    <div class="jai-zone-card__image">
+      <img src="assets/images/zona/pelabuhan-bakauheni.jpg" alt="Pelabuhan Bakauheni" loading="lazy">
+    </div>
+    <div class="jai-zone-card__body">
+      <span class="jai-detail-modal__info-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 8h10v8H3Z"></path>
+          <path d="M13 11h4l3 3v2h-7Z"></path>
+          <path d="M3 12h7"></path>
+          <circle cx="7" cy="18" r="2"></circle>
+          <circle cx="17" cy="18" r="2"></circle>
+          <path d="M9 18h6"></path>
+        </svg>
+      </span>
+      <h3>Pelabuhan Bakauheni</h3>
+      <p>Jalur penyeberangan utama Sumatra–Jawa dengan volume lalu lintas kendaraan dan komoditas yang tinggi.</p>
+    </div>
+  </article>
 
-          <article>
-            <span class="jai-detail-modal__info-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
-              </svg>
-            </span>
-            <h3>Fokus Monitoring</h3>
-            <p>
-              Identifikasi spesies, pemeriksaan dokumen,
-              analisis risiko, serta pengawasan lalu lintas.
-            </p>
-          </article>
-        </div>
+  <article class="jai-zone-card">
+    <div class="jai-zone-card__image">
+      <img src="assets/images/zona/bandara-radin-inten.jpg" alt="Bandara Radin Inten II" loading="lazy">
+    </div>
+    <div class="jai-zone-card__body">
+      <span class="jai-detail-modal__info-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5Z"></path>
+        </svg>
+      </span>
+      <h3>Bandara Radin Inten II</h3>
+      <p>Pintu lalu lintas udara untuk pemeriksaan komoditas dan media pembawa yang masuk maupun keluar Lampung.</p>
+    </div>
+  </article>
+
+  <article class="jai-zone-card">
+    <div class="jai-zone-card__image">
+      <img src="assets/images/zona/kantor-pos-pahoman.jpg" alt="Kantor Pos Pahoman" loading="lazy">
+    </div>
+    <div class="jai-zone-card__body">
+      <span class="jai-detail-modal__info-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          <path d="m4 7 8 6 8-6"></path>
+        </svg>
+      </span>
+      <h3>Kantor Pos Pahoman</h3>
+      <p>Titik pengawasan kiriman paket dan pos yang berpotensi membawa ikan atau media pembawa lainnya.</p>
+    </div>
+  </article>
+</div>
       </div>
     </section>
   </div>
