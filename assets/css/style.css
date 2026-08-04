@@ -4625,3 +4625,286 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
     overflow: hidden !important;
   }
 }
+
+.blog-v3__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.blog-v3__card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(140, 170, 160, 0.22);
+  border-radius: 26px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.10);
+}
+
+.blog-v3__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.14);
+  border-color: rgba(165, 214, 77, 0.35);
+}
+
+.blog-v3__thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #dfe8e3;
+}
+
+.blog-v3__thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.blog-v3__badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(10, 61, 60, 0.88);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-v3__card-content {
+  padding: 22px 22px 24px;
+}
+
+.blog-v3__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-bottom: 12px;
+  color: #5e7772;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.blog-v3__card-content h2 {
+  margin: 0 0 12px;
+  color: #123f3b;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.blog-v3__card-content p {
+  margin: 0;
+  color: #5a6f6a;
+  line-height: 1.7;
+}
+
+.blog-v3__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #0f7b73;
+  font-weight: 800;
+}
+
+.blog-v3__open span:last-child {
+  transition: transform 0.2s ease;
+}
+
+.blog-v3__card:hover .blog-v3__open span:last-child {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1100px) {
+  .blog-v3__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-v3__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .blog-v3__card-content {
+    padding: 18px 18px 20px;
+  }
+
+  .blog-v3__card-content h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================================================
+   FIX IKON TUJUAN MONITORING
+   Kotak tetap persegi dan sama dengan ikon Wilayah Kerja
+========================================================= */
+
+.about-v2__panel-banner-icon--image {
+  display: grid !important;
+  place-items: center !important;
+
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  max-width: 64px !important;
+
+  flex: 0 0 64px !important;
+  aspect-ratio: 1 / 1;
+
+  margin: 0 !important;
+  padding: 5px !important;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-sizing: border-box;
+}
+
+.about-v2__panel-banner-icon--image img {
+  display: block;
+
+  width: 88% !important;
+  height: 88% !important;
+  max-width: none !important;
+
+  object-fit: contain;
+  object-position: center;
+
+  filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.18));
+
+  opacity: 0.97;
+}
+
+@media (max-width: 700px) {
+  .about-v2__panel-banner-icon--image {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    max-width: 54px !important;
+
+    flex-basis: 54px !important;
+
+    padding: 4px !important;
+    border-radius: 16px;
+  }
+
+  .about-v2__panel-banner-icon--image img {
+    width: 88% !important;
+    height: 88% !important;
+  }
+}
+
+/* =========================================================
+   IKON PENGENDALIAN — FINAL
+   Kotak luar mengikuti ukuran ikon mini lain (38 × 38 px),
+   sedangkan PNG berada di frame kecil di tengah.
+========================================================= */
+
+.about-v2__mini-card--pengendalian {
+  align-items: flex-start;
+}
+
+.about-v2__mini-icon--pengendalian {
+  display: grid !important;
+  place-items: center !important;
+
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  max-width: 38px !important;
+  flex: 0 0 38px !important;
+
+  align-self: flex-start;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(143, 228, 173, 0.2) !important;
+  border-radius: 11px !important;
+
+  color: #8fe4ad !important;
+  background: rgba(143, 228, 173, 0.13) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.05) !important;
+
+  box-sizing: border-box !important;
+}
+
+.about-v2__mini-icon-inner {
+  display: grid;
+  place-items: center;
+
+  width: 27px;
+  height: 27px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+
+  background: rgba(4, 48, 51, 0.28);
+}
+
+.about-v2__mini-icon--pengendalian img {
+  display: block !important;
+
+  width: 24px !important;
+  height: 24px !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 5px !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 700px) {
+  .about-v2__mini-icon--pengendalian {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    flex-basis: 38px !important;
+  }
+
+  .about-v2__mini-icon-inner {
+    width: 27px;
+    height: 27px;
+  }
+
+  .about-v2__mini-icon--pengendalian img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}

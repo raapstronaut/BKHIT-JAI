@@ -480,6 +480,77 @@
       display: none !important;
     }
 
+    /* FOTO BERITA UTAMA DAN THUMBNAIL BERITA */
+    .blog-v3__featured-visual--photo {
+      min-height: 390px;
+      padding: 0;
+      background: #dce8e3;
+    }
+
+    .blog-v3__featured-visual--photo::before,
+    .blog-v3__featured-visual--photo::after {
+      display: none !important;
+    }
+
+    .blog-v3__featured-visual--photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      object-position: center 48%;
+    }
+
+    .blog-v3__featured-visual--photo .blog-v3__featured-label {
+      position: absolute;
+      z-index: 2;
+      top: 28px;
+      left: 28px;
+      color: #ffffff;
+      background: rgba(5, 58, 58, .86);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .blog-v3__thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #dce8e3;
+    }
+
+    .blog-v3__thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease;
+    }
+
+    .blog-v3__card:hover .blog-v3__thumb img {
+      transform: scale(1.035);
+    }
+
+    .blog-v3__badge {
+      position: absolute;
+      z-index: 2;
+      top: 16px;
+      left: 16px;
+      display: inline-flex;
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 999px;
+      color: #ffffff;
+      background: rgba(5, 58, 58, .88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-size: .67rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
     @media (max-width: 850px) {
       .blog-v3__featured {
         grid-template-columns: 1fr;
@@ -487,6 +558,15 @@
 
       .blog-v3__featured-visual {
         min-height: 300px;
+      }
+
+      .blog-v3__featured-visual--photo img {
+        min-height: 300px;
+      }
+
+      .blog-v3__featured-visual--photo .blog-v3__featured-label {
+        top: 18px;
+        left: 18px;
       }
     }
 
@@ -561,9 +641,14 @@
       </header>
 
       <article class="blog-v3__featured reveal">
-        <div class="blog-v3__featured-visual">
+        <div class="blog-v3__featured-visual blog-v3__featured-visual--photo">
+          <img
+            src="assets/images/blog/arapaima.jpg"
+            alt="Ikan Arapaima"
+            loading="eager"
+            fetchpriority="high"
+          >
           <span class="blog-v3__featured-label">Berita Utama KKP</span>
-          <strong>Arapaima</strong>
         </div>
 
         <div class="blog-v3__featured-content">
@@ -599,38 +684,48 @@
       </article>
 
       <div class="blog-v3__grid">
+
         <article
           class="blog-v3__card reveal"
           role="button"
           tabindex="0"
           data-blog-v3-open
-          data-category="Dampak Ekologis"
-          data-date="28 April 2026"
-          data-author="DIGITANI IPB"
-          data-title="Ikan Sapu-sapu: Si Invasif yang Merusak Alam dan Mengancam Kesehatan Kita"
-          data-intro="Ikan sapu-sapu yang awalnya dikenal sebagai pembersih akuarium telah berkembang menjadi spesies asing invasif yang mendominasi berbagai perairan tawar dan menimbulkan tekanan terhadap biodiversitas lokal."
-          data-extra="Artikel DIGITANI IPB membahas kemampuan adaptasi ikan sapu-sapu, kompetisi dengan ikan lokal, kerusakan jaring nelayan, serta risiko konsumsi ikan yang berasal dari perairan tercemar karena kemungkinan akumulasi logam berat. Pengelolaan perlu mengutamakan edukasi, pengendalian populasi, dan pemanfaatan non-konsumsi yang aman."
+          data-category="Edukasi Lingkungan"
+          data-date="2025"
+          data-author="Digitani IPB"
+          data-title="Ikan Sapu-sapu, Spesies Invasif yang Merusak Alam"
+          data-intro="Ikan sapu-sapu dikenal sebagai spesies invasif yang dapat berkembang cepat, mendominasi habitat, dan mengganggu keseimbangan ekosistem perairan."
+          data-extra="Spesies ini mampu beradaptasi pada kondisi lingkungan yang kurang ideal, memanfaatkan berbagai sumber makanan, dan berkembang dalam jumlah besar. Keberadaannya dapat menekan populasi ikan lokal serta merusak dasar perairan dan tebing sungai."
           data-url="https://digitani.ipb.ac.id/ikan-sapu-sapu-si-invasif-yang-merusak-alam-dan-mengancam-kesehatan-kita/"
         >
-          <div class="blog-v3__cover blog-v3__cover--species">
-            <span>Ikan Sapu-sapu</span>
+          <div class="blog-v3__thumb">
+            <img
+              src="assets/images/blog/sapu-sapu.jpg"
+              alt="Ikan sapu-sapu"
+              loading="lazy"
+              style="object-position: center 45%;"
+            >
+            <span class="blog-v3__badge">Edukasi Lingkungan</span>
           </div>
 
           <div class="blog-v3__card-content">
             <div class="blog-v3__meta">
-              <span>28 April 2026</span>
-              <span>DIGITANI IPB</span>
+              <span>2025</span>
+              <span>Digitani IPB</span>
             </div>
 
-            <h2>Ikan Sapu-sapu: Si Invasif yang Merusak Alam dan Mengancam Kesehatan Kita</h2>
+            <h2>Ikan Sapu-sapu, Spesies Invasif yang Merusak Alam</h2>
 
             <p>
-              Ikan sapu-sapu mampu beradaptasi pada perairan tercemar,
-              bersaing dengan ikan lokal, dan menimbulkan dampak ekologis
-              serta ekonomi.
+              Ikan sapu-sapu menjadi perhatian karena kemampuannya
+              mendominasi habitat perairan dan menimbulkan dampak
+              ekologis bagi spesies lokal.
             </p>
 
-            <span class="blog-v3__open">Baca ringkasan <span aria-hidden="true">→</span></span>
+            <div class="blog-v3__open">
+              Baca ringkasan
+              <span aria-hidden="true">→</span>
+            </div>
           </div>
         </article>
 
@@ -643,12 +738,18 @@
           data-date="22 Januari 2025"
           data-author="KKP / DJPSDKP"
           data-title="KKP Awasi Ketat Peredaran Ikan Invasif melalui Media Sosial"
-          data-intro="KKP meningkatkan pengawasan terhadap perdagangan ikan invasif melalui media sosial dan menghentikan penjualan ikan berbahaya atau merugikan yang ditemukan pada sebuah toko ikan hias di Bekasi."
-          data-extra="Dalam pemeriksaan tersebut, pengawas mengamankan ratusan ikan piranha serta menemukan Alligator gar dan Peacock bass. KKP mengingatkan masyarakat agar tidak memelihara, memperjualbelikan, atau melepaskan jenis ikan berbahaya dan merugikan ke perairan umum karena dapat mengancam keberlanjutan ekosistem."
+          data-intro="Kementerian Kelautan dan Perikanan meningkatkan pengawasan terhadap perdagangan ikan invasif melalui media sosial untuk mencegah penyebaran spesies berbahaya ke perairan umum."
+          data-extra="Dalam pengawasan tersebut ditemukan piranha, Alligator gar, dan Peacock bass yang diperjualbelikan. Langkah pengamanan dilakukan sebagai bentuk pencegahan terhadap pelepasan ikan invasif ke alam yang dapat mengancam biodiversitas dan keseimbangan ekosistem perairan."
           data-url="https://www.kkp.go.id/news/news-detail/kkp-awasi-ketat-peredaran-ikan-invasif-melalui-media-sosial-J8Qo.html"
         >
-          <div class="blog-v3__cover blog-v3__cover--monitoring">
-            <span>Pengawasan Peredaran</span>
+          <div class="blog-v3__thumb">
+            <img
+              src="assets/images/blog/pengawasan-ikan-invasif.jpg"
+              alt="Pengawasan ikan invasif"
+              loading="lazy"
+              style="object-position: center 35%;"
+            >
+            <span class="blog-v3__badge">Pengawasan</span>
           </div>
 
           <div class="blog-v3__card-content">
@@ -660,14 +761,18 @@
             <h2>KKP Awasi Ketat Peredaran Ikan Invasif melalui Media Sosial</h2>
 
             <p>
-              Pengawasan perdagangan ikan invasif diperkuat untuk
-              mencegah peredaran dan pelepasan spesies berbahaya ke
-              perairan umum.
+              KKP memperketat pengawasan terhadap perdagangan ikan invasif
+              melalui media sosial untuk mencegah peredaran dan pelepasan
+              spesies berbahaya ke perairan umum.
             </p>
 
-            <span class="blog-v3__open">Baca ringkasan <span aria-hidden="true">→</span></span>
+            <div class="blog-v3__open">
+              Baca ringkasan
+              <span aria-hidden="true">→</span>
+            </div>
           </div>
         </article>
+
       </div>
 
       <section class="blog-v3__gallery-link reveal">
