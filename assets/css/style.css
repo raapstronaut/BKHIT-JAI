@@ -4291,3 +4291,337 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
     padding: 29px 20px 24px;
   }
 }
+
+/* =========================================================
+   DASAR HUKUM — EMPAT DOKUMEN
+========================================================= */
+
+.about-v2__law-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  overflow-x: visible;
+  scroll-snap-type: none;
+}
+
+@media (max-width: 900px) {
+  .about-v2__law-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-v2__law-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   FIX FINAL NAVBAR MOBILE BKHIT
+   - warna sama di semua halaman
+   - menu benar-benar fullscreen
+   - Galeri dan Blog tidak bentrok
+========================================================= */
+
+@media (max-width: 980px) {
+
+  /* Navbar mobile selalu konsisten */
+  .site-header {
+    z-index: 9999 !important;
+    padding: 8px 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .site-header .nav-wrap,
+  .site-header:not(.scrolled) .nav-wrap,
+  .site-header.scrolled .nav-wrap {
+    position: relative;
+
+    min-height: 62px !important;
+    padding: 0 13px !important;
+
+    overflow: visible !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 18px !important;
+
+    background: rgba(4, 37, 42, 0.94) !important;
+
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Logo dan tulisan selalu putih di mobile */
+  .site-header .navbar-brand strong,
+  .site-header .brand strong,
+  .site-header:not(.scrolled) .navbar-brand strong,
+  .site-header:not(.scrolled) .brand strong,
+  .site-header.scrolled .navbar-brand strong,
+  .site-header.scrolled .brand strong {
+    color: #ffffff !important;
+  }
+
+  .site-header .navbar-brand small,
+  .site-header .brand small,
+  .site-header:not(.scrolled) .navbar-brand small,
+  .site-header:not(.scrolled) .brand small,
+  .site-header.scrolled .navbar-brand small,
+  .site-header.scrolled .brand small {
+    color: rgba(255, 255, 255, 0.72) !important;
+  }
+
+  /* Paksa Galeri dan Blog ikut warna navbar mobile yang sama */
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .navbar-brand strong,
+
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .brand strong,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .navbar-brand strong,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .brand strong {
+    color: #ffffff !important;
+  }
+
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .navbar-brand small,
+
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .brand small,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .navbar-brand small,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .brand small {
+    color: rgba(255, 255, 255, 0.72) !important;
+  }
+
+  /* Tombol hamburger */
+  .nav-toggle {
+    position: relative;
+    z-index: 10002 !important;
+
+    display: block !important;
+
+    width: 44px !important;
+    height: 44px !important;
+    flex: 0 0 44px;
+
+    margin: 0 !important;
+    padding: 7px !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
+    cursor: pointer;
+  }
+
+  .nav-toggle span,
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .nav-toggle span,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .nav-toggle span {
+    background: #ffffff !important;
+  }
+
+  /* Menu mobile fullscreen */
+  .main-nav {
+    position: fixed !important;
+    z-index: 10000 !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    max-width: none !important;
+
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 7px !important;
+
+    margin: 0 !important;
+    padding: 88px 22px 36px !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: rgba(3, 36, 41, 0.995) !important;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateX(100%) !important;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.25s ease,
+      visibility 0.3s ease !important;
+  }
+
+  .main-nav.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: translateX(0) !important;
+  }
+
+  /* Semua link tetap putih saat menu dibuka */
+  .main-nav .nav-link,
+
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .main-nav.open
+  .nav-link,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .main-nav.open
+  .nav-link {
+    display: flex !important;
+
+    width: min(100%, 290px) !important;
+    min-height: 48px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 10px 14px !important;
+
+    color: #ffffff !important;
+
+    font-size: 1.12rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  .main-nav .nav-link:hover,
+  .main-nav .nav-link.active,
+
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .main-nav.open
+  .nav-link:hover,
+
+  body[data-page="galeri"]
+  .site-header:not(.scrolled)
+  .main-nav.open
+  .nav-link.active,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .main-nav.open
+  .nav-link:hover,
+
+  body[data-page="blog"]
+  .site-header:not(.scrolled)
+  .main-nav.open
+  .nav-link.active {
+    color: #ffffff !important;
+  }
+
+  .main-nav .nav-link::after {
+    right: 28% !important;
+    bottom: 3px !important;
+    left: 28% !important;
+
+    background: #b7dc68 !important;
+  }
+
+  /*
+    Saat menu dibuka, backdrop-filter nav-wrap dimatikan.
+    Ini mencegah position:fixed terkurung di kotak navbar.
+  */
+  body.nav-open .nav-wrap,
+  .site-header:has(.main-nav.open) .nav-wrap {
+    border-color: transparent !important;
+    background: transparent !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    contain: none !important;
+  }
+
+  /* Tombol hamburger berubah menjadi X di kanan atas */
+  body.nav-open .nav-toggle,
+  .site-header:has(.main-nav.open) .nav-toggle {
+    position: fixed !important;
+    z-index: 10003 !important;
+
+    top: 15px !important;
+    right: 15px !important;
+
+    width: 46px !important;
+    height: 46px !important;
+
+    padding: 7px !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(9, 75, 78, 0.96) !important;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.23) !important;
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg) !important;
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg) !important;
+  }
+
+  /* Logo tidak menutupi menu saat menu terbuka */
+  body.nav-open .navbar-brand,
+  body.nav-open .brand,
+  .site-header:has(.main-nav.open) .navbar-brand,
+  .site-header:has(.main-nav.open) .brand {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  body.nav-open,
+  body:has(.main-nav.open) {
+    overflow: hidden !important;
+  }
+}
