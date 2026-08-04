@@ -595,10 +595,6 @@
    HALAMAN TENTANG V2
 ========================================================= */
 
-body[data-page="tentang"] {
-  background: #062c33;
-}
-
 .about-v2 {
   position: relative;
   z-index: 0;
@@ -612,41 +608,6 @@ body[data-page="tentang"] {
 }
 
 /* Wallpaper tetap ketika halaman digulir */
-
-.about-v2__fixed-bg {
-  position: fixed;
-  z-index: -2;
-
-  inset: -30px;
-
-  background:
-    url("../images/wpphome.png")
-    center / cover
-    no-repeat;
-
-  filter: blur(8px);
-
-  transform: scale(1.06);
-  pointer-events: none;
-}
-
-.about-v2::before {
-  content: "";
-
-  position: fixed;
-  z-index: -1;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(3, 30, 35, 0.72),
-      rgba(4, 42, 47, 0.82)
-    );
-
-  pointer-events: none;
-}
 
 /* =========================================================
    HERO
@@ -1648,10 +1609,6 @@ body[data-page="tentang"] {
    File khusus: assets/css/jai.css
    ========================================================= */
 
-body[data-page="jai"] {
-  background: #062c33;
-}
-
 .jai-page {
   position: relative;
   z-index: 0;
@@ -1659,33 +1616,6 @@ body[data-page="jai"] {
   overflow: hidden;
   isolation: isolate;
   color: #ffffff;
-}
-
-.jai-page__fixed-bg {
-  position: fixed;
-  z-index: -2;
-  inset: -30px;
-  background:
-    url("../images/wpphome.png")
-    center / cover
-    no-repeat;
-  filter: blur(8px);
-  transform: scale(1.06);
-  pointer-events: none;
-}
-
-.jai-page::before {
-  content: "";
-  position: fixed;
-  z-index: -1;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(3, 30, 35, 0.78),
-      rgba(4, 42, 47, 0.9)
-    );
-  pointer-events: none;
 }
 
 body[data-page="jai"] #footer-container {
@@ -2482,28 +2412,11 @@ body.jai-detail-open {
    PAGE GALERI V3
 ========================================================= */
 
-body[data-page="galeri"] {
-  background: #f4f7f2;
-}
-
 .gallery-v3 {
   min-height: 100vh;
   padding: 128px 0 82px;
-
   color: #173d3c;
-
-  background:
-    radial-gradient(
-      circle at 92% 3%,
-      rgba(192, 229, 128, 0.17),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 5% 45%,
-      rgba(23, 115, 107, 0.07),
-      transparent 25%
-    ),
-    #f4f7f2;
+  background: transparent;
 }
 
 
@@ -2969,28 +2882,11 @@ body.gallery-v3-modal-open {
    PAGE BLOG V3
 ========================================================= */
 
-body[data-page="blog"] {
-  background: #f5f7f2;
-}
-
 .blog-v3 {
   min-height: 100vh;
   padding: 128px 0 84px;
-
   color: #173d3c;
-
-  background:
-    radial-gradient(
-      circle at 88% 2%,
-      rgba(192, 229, 128, 0.18),
-      transparent 29%
-    ),
-    radial-gradient(
-      circle at 0 70%,
-      rgba(23, 115, 107, 0.07),
-      transparent 26%
-    ),
-    #f5f7f2;
+  background: transparent;
 }
 
 
@@ -3955,116 +3851,6 @@ body.blog-v3-modal-open {
 }
 
 /* =========================================================
-   NAVBAR GALERI & BLOG
-   TERLIHAT TRANSPARAN DI ATAS, GELAP SETELAH SCROLL
-========================================================= */
-
-body[data-page="galeri"] .site-header,
-body[data-page="blog"] .site-header {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-
-  transition:
-    background 0.3s ease,
-    padding 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-/* POSISI PALING ATAS */
-body[data-page="galeri"] .site-header:not(.scrolled),
-body[data-page="blog"] .site-header:not(.scrolled) {
-  background: transparent;
-  box-shadow: none;
-}
-
-/* KOTAK NAVBAR TRANSPARAN */
-body[data-page="galeri"] .site-header:not(.scrolled) .nav-wrap,
-body[data-page="blog"] .site-header:not(.scrolled) .nav-wrap {
-  border-color: transparent;
-  background: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-/* TEKS LOGO SAAT DI ATAS */
-body[data-page="galeri"] .site-header:not(.scrolled) .brand strong,
-body[data-page="galeri"] .site-header:not(.scrolled) .navbar-brand strong,
-body[data-page="blog"] .site-header:not(.scrolled) .brand strong,
-body[data-page="blog"] .site-header:not(.scrolled) .navbar-brand strong {
-  color: #073f42;
-}
-
-body[data-page="galeri"] .site-header:not(.scrolled) .brand small,
-body[data-page="galeri"] .site-header:not(.scrolled) .navbar-brand small,
-body[data-page="blog"] .site-header:not(.scrolled) .brand small,
-body[data-page="blog"] .site-header:not(.scrolled) .navbar-brand small {
-  color: #527071;
-}
-
-/* LINK MENU SAAT DI ATAS */
-body[data-page="galeri"] .site-header:not(.scrolled) .nav-link,
-body[data-page="blog"] .site-header:not(.scrolled) .nav-link {
-  color: #244f50;
-}
-
-body[data-page="galeri"] .site-header:not(.scrolled) .nav-link:hover,
-body[data-page="galeri"] .site-header:not(.scrolled) .nav-link.active,
-body[data-page="blog"] .site-header:not(.scrolled) .nav-link:hover,
-body[data-page="blog"] .site-header:not(.scrolled) .nav-link.active {
-  color: #063b42;
-}
-
-/* GARIS MENU AKTIF */
-body[data-page="galeri"] .site-header:not(.scrolled) .nav-link::after,
-body[data-page="blog"] .site-header:not(.scrolled) .nav-link::after {
-  background: #86b944;
-}
-
-/* TOMBOL HAMBURGER SAAT DI ATAS */
-body[data-page="galeri"] .site-header:not(.scrolled) .nav-toggle span,
-body[data-page="blog"] .site-header:not(.scrolled) .nav-toggle span {
-  background: #073f42;
-}
-
-/* SETELAH DISCROLL */
-body[data-page="galeri"] .site-header.scrolled .nav-wrap,
-body[data-page="blog"] .site-header.scrolled .nav-wrap {
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(4, 37, 42, 0.92);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
-}
-
-/* TEKS KEMBALI PUTIH SETELAH SCROLL */
-body[data-page="galeri"] .site-header.scrolled .brand strong,
-body[data-page="galeri"] .site-header.scrolled .navbar-brand strong,
-body[data-page="galeri"] .site-header.scrolled .nav-link,
-body[data-page="blog"] .site-header.scrolled .brand strong,
-body[data-page="blog"] .site-header.scrolled .navbar-brand strong,
-body[data-page="blog"] .site-header.scrolled .nav-link {
-  color: #ffffff;
-}
-
-body[data-page="galeri"] .site-header.scrolled .brand small,
-body[data-page="galeri"] .site-header.scrolled .navbar-brand small,
-body[data-page="blog"] .site-header.scrolled .brand small,
-body[data-page="blog"] .site-header.scrolled .navbar-brand small {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-body[data-page="galeri"] .site-header.scrolled .nav-toggle span,
-body[data-page="blog"] .site-header.scrolled .nav-toggle span {
-  background: #ffffff;
-}
-
-/* =========================================================
    FIX FINAL POPUP GALERI
    - frame foto selalu landscape
    - popup tidak terlalu lebar
@@ -4626,26 +4412,40 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
   }
 }
 
-.blog-v3__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
 
-.blog-v3__card {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(140, 170, 160, 0.22);
-  border-radius: 26px;
+/* =========================================================
+   MEDIA GAMBAR BLOG
+   Hanya aturan gambar; layout card tetap memakai PAGE BLOG V3.
+========================================================= */
+
+.blog-v3__featured-visual--photo {
+  min-height: 390px;
+  padding: 0;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.10);
+  background: #dce8e3;
 }
 
-.blog-v3__card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.14);
-  border-color: rgba(165, 214, 77, 0.35);
+.blog-v3__featured-visual--photo::before,
+.blog-v3__featured-visual--photo::after {
+  display: none !important;
+}
+
+.blog-v3__featured-visual--photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.blog-v3__featured-visual--photo .blog-v3__featured-label {
+  position: absolute;
+  z-index: 2;
+  top: 28px;
+  left: 28px;
+  color: #ffffff;
+  background: rgba(5, 58, 58, 0.86);
 }
 
 .blog-v3__thumb {
@@ -4653,94 +4453,47 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #dfe8e3;
+  background: #dce8e3;
 }
 
 .blog-v3__thumb img {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-v3__card:hover .blog-v3__thumb img {
+  transform: scale(1.035);
 }
 
 .blog-v3__badge {
   position: absolute;
+  z-index: 2;
   top: 16px;
   left: 16px;
   display: inline-flex;
-  align-items: center;
-  padding: 8px 14px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
-  background: rgba(10, 61, 60, 0.88);
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 800;
+  color: #ffffff;
+  background: rgba(5, 58, 58, 0.88);
+  font-size: 0.67rem;
+  font-weight: 850;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.blog-v3__card-content {
-  padding: 22px 22px 24px;
-}
-
-.blog-v3__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 16px;
-  margin-bottom: 12px;
-  color: #5e7772;
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-.blog-v3__card-content h2 {
-  margin: 0 0 12px;
-  color: #123f3b;
-  font-size: 1.45rem;
-  line-height: 1.25;
-}
-
-.blog-v3__card-content p {
-  margin: 0;
-  color: #5a6f6a;
-  line-height: 1.7;
-}
-
-.blog-v3__open {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  color: #0f7b73;
-  font-weight: 800;
-}
-
-.blog-v3__open span:last-child {
-  transition: transform 0.2s ease;
-}
-
-.blog-v3__card:hover .blog-v3__open span:last-child {
-  transform: translateX(4px);
-}
-
-@media (max-width: 1100px) {
-  .blog-v3__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .blog-v3__grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+@media (max-width: 850px) {
+  .blog-v3__featured-visual--photo,
+  .blog-v3__featured-visual--photo img {
+    min-height: 300px;
   }
 
-  .blog-v3__card-content {
-    padding: 18px 18px 20px;
-  }
-
-  .blog-v3__card-content h2 {
-    font-size: 1.2rem;
+  .blog-v3__featured-visual--photo .blog-v3__featured-label {
+    top: 18px;
+    left: 18px;
   }
 }
 
@@ -4811,69 +4564,58 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
   }
 }
 
-/* IKON PNG PENGENDALIAN - VERSI LEBIH NATURAL */
-.about-v2__mini-icon--pengendalian {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* =========================================================
+   IKON PENGENDALIAN — FINAL
+========================================================= */
 
+.about-v2__mini-card--pengendalian {
+  align-items: flex-start;
+}
+
+.about-v2__mini-icon--pengendalian {
+  display: grid !important;
+  place-items: center !important;
   width: 38px !important;
   height: 38px !important;
   min-width: 38px !important;
   max-width: 38px !important;
   flex: 0 0 38px !important;
-
+  margin: 0 !important;
   padding: 0 !important;
-  overflow: visible !important;
-
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(143, 228, 173, 0.2) !important;
+  border-radius: 11px !important;
+  background: rgba(143, 228, 173, 0.13) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+  box-sizing: border-box !important;
 }
 
-.about-v2__mini-icon--pengendalian img {
-  display: block;
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 0 !important;
+.about-v2__mini-icon-inner {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: rgba(4, 48, 51, 0.24);
+}
+
+.about-v2__mini-icon--pengendalian > img,
+.about-v2__mini-icon--pengendalian .about-v2__mini-icon-inner img {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 5px !important;
+  object-fit: contain !important;
+  object-position: center !important;
   background: transparent !important;
   box-shadow: none !important;
   filter: none !important;
-}
-/* IKON PENGENDALIAN - ADA KOTAK LUAR + PNG DI DALAM */
-.about-v2__mini-icon--pengendalian {
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  max-width: 48px !important;
-  flex: 0 0 48px !important;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 14px;
-  overflow: hidden;
-
-  background: rgba(151, 241, 187, 0.14) !important;
-  border: 1px solid rgba(151, 241, 187, 0.22) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-  padding: 0 !important;
-}
-
-.about-v2__mini-icon--pengendalian img {
-  display: block;
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  object-position: center;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  filter: brightness(1.12) contrast(1.05);
+  transform: none !important;
 }
 
 /* =========================================================
@@ -5025,5 +4767,141 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
   .about-v2__law-card p {
     font-size: 0.82rem !important;
     line-height: 1.6 !important;
+  }
+}
+
+/* =========================================================
+   WALLPAPER FINAL — TENTANG, JAI, GALERI, BLOG
+   Wallpaper sama, blur, dan overlay gelap. Navbar tidak diubah.
+========================================================= */
+
+body[data-page="tentang"],
+body[data-page="jai"],
+body[data-page="galeri"],
+body[data-page="blog"] {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  background: #062c33;
+}
+
+body[data-page="tentang"]::before,
+body[data-page="jai"]::before,
+body[data-page="galeri"]::before,
+body[data-page="blog"]::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: -26px;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(2, 22, 26, 0.7),
+      rgba(2, 28, 33, 0.84)
+    ),
+    url("../images/wpphome.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.about-v2,
+.jai-page,
+.gallery-v3,
+.blog-v3 {
+  background: transparent !important;
+}
+
+.about-v2__fixed-bg,
+.jai-page__fixed-bg {
+  display: none !important;
+}
+
+.about-v2::before,
+.jai-page::before {
+  content: none !important;
+}
+
+/* Heading Galeri dan Blog tetap terbaca di atas wallpaper gelap. */
+.gallery-v3__heading h1,
+.blog-v3__heading h1 {
+  color: #ffffff !important;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.42);
+}
+
+.gallery-v3__lead,
+.blog-v3__lead {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.gallery-v3__kicker,
+.blog-v3__kicker {
+  color: #c6e881 !important;
+}
+
+.gallery-v3__heading-icon,
+.blog-v3__heading-icon {
+  color: #c6e881 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(4, 38, 43, 0.74) !important;
+}
+
+/* Card Blog harus tetap putih. */
+.blog-v3__featured,
+.blog-v3__card,
+.blog-v3__featured-content,
+.blog-v3__card-content {
+  background: #ffffff !important;
+}
+
+.blog-v3__featured,
+.blog-v3__card {
+  border-color: rgba(20, 65, 61, 0.09) !important;
+}
+
+.blog-v3__featured-content h2,
+.blog-v3__card-content h2,
+.blog-v3__card h2 {
+  color: #173d3c !important;
+}
+
+.blog-v3__featured-content p,
+.blog-v3__card-content p,
+.blog-v3__card p {
+  color: #647374 !important;
+}
+
+.blog-v3__meta {
+  color: #738180 !important;
+}
+
+.blog-v3__open {
+  color: #17736b !important;
+}
+
+.blog-v3__gallery-link {
+  border-color: rgba(23, 115, 107, 0.12) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+}
+
+@media (max-width: 700px) {
+  body[data-page="tentang"]::before,
+  body[data-page="jai"]::before,
+  body[data-page="galeri"]::before,
+  body[data-page="blog"]::before {
+    inset: -20px;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(2, 20, 24, 0.74),
+        rgba(2, 26, 31, 0.88)
+      ),
+      url("../images/wpphome.png");
+    background-position: center top;
+    filter: blur(7px);
+    transform: scale(1.05);
   }
 }
