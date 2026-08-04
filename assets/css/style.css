@@ -4811,19 +4811,11 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
   }
 }
 
-/* =========================================================
-   IKON PENGENDALIAN — FINAL
-   Kotak luar mengikuti ukuran ikon mini lain (38 × 38 px),
-   sedangkan PNG berada di frame kecil di tengah.
-========================================================= */
-
-.about-v2__mini-card--pengendalian {
-  align-items: flex-start;
-}
-
+/* IKON PNG PENGENDALIAN - VERSI LEBIH NATURAL */
 .about-v2__mini-icon--pengendalian {
-  display: grid !important;
-  place-items: center !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 38px !important;
   height: 38px !important;
@@ -4831,80 +4823,207 @@ body[data-page="blog"] .site-header.scrolled .nav-toggle span {
   max-width: 38px !important;
   flex: 0 0 38px !important;
 
-  align-self: flex-start;
-
-  margin: 0 !important;
   padding: 0 !important;
+  overflow: visible !important;
 
-  overflow: hidden !important;
-
-  border: 1px solid rgba(143, 228, 173, 0.2) !important;
-  border-radius: 11px !important;
-
-  color: #8fe4ad !important;
-  background: rgba(143, 228, 173, 0.13) !important;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    0 4px 12px rgba(0, 0, 0, 0.05) !important;
-
-  box-sizing: border-box !important;
-}
-
-.about-v2__mini-icon-inner {
-  display: grid;
-  place-items: center;
-
-  width: 27px;
-  height: 27px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 7px;
-
-  background: rgba(4, 48, 51, 0.28);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 .about-v2__mini-icon--pengendalian img {
-  display: block !important;
-
-  width: 24px !important;
-  height: 24px !important;
-  max-width: none !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  border: 0 !important;
-  border-radius: 5px !important;
-
-  object-fit: contain !important;
-  object-position: center !important;
-
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
   filter: none !important;
-  transform: none !important;
-  opacity: 1 !important;
+}
+/* IKON PENGENDALIAN - ADA KOTAK LUAR + PNG DI DALAM */
+.about-v2__mini-icon--pengendalian {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  flex: 0 0 48px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  background: rgba(151, 241, 187, 0.14) !important;
+  border: 1px solid rgba(151, 241, 187, 0.22) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  padding: 0 !important;
 }
 
-@media (max-width: 700px) {
-  .about-v2__mini-icon--pengendalian {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    max-width: 38px !important;
-    flex-basis: 38px !important;
+.about-v2__mini-icon--pengendalian img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  filter: brightness(1.12) contrast(1.05);
+}
+
+/* =========================================================
+   FIX MOBILE: MODAL JAI + DASAR HUKUM
+   1. Popup/tombol tutup JAI berada di atas navbar.
+   2. Kartu Dasar Hukum tidak gepeng dan tersusun satu kolom di HP.
+========================================================= */
+
+/* Navbar mobile memakai z-index tinggi, jadi modal harus lebih tinggi. */
+.jai-detail-modal {
+  z-index: 20000 !important;
+}
+
+.jai-detail-modal__backdrop {
+  z-index: 0 !important;
+}
+
+.jai-detail-modal__panel {
+  z-index: 1 !important;
+}
+
+.jai-detail-modal__close {
+  z-index: 3 !important;
+}
+
+@media (max-width: 980px) {
+  .jai-detail-modal {
+    align-items: center !important;
+    padding:
+      max(8px, env(safe-area-inset-top))
+      8px
+      max(8px, env(safe-area-inset-bottom)) !important;
   }
 
-  .about-v2__mini-icon-inner {
-    width: 27px;
-    height: 27px;
+  .jai-detail-modal__panel {
+    width: 100% !important;
+    max-height: calc(100dvh - 16px) !important;
+    padding: 14px !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    border-radius: 18px !important;
   }
 
-  .about-v2__mini-icon--pengendalian img {
-    width: 24px !important;
-    height: 24px !important;
+  .jai-detail-modal__close {
+    position: sticky !important;
+    top: 0 !important;
+    float: right !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    margin: 0 0 8px 12px !important;
+
+    background: #16837c !important;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.22);
+  }
+
+  .jai-detail-modal__header {
+    clear: both;
+    padding-right: 0 !important;
+  }
+}
+
+/* Reset aturan grid horizontal lama yang masih aktif pada tablet. */
+@media (max-width: 900px) {
+  .about-v2__law-grid {
+    display: grid !important;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-flow: row !important;
+    grid-auto-columns: auto !important;
+    grid-auto-rows: auto !important;
+
+    width: 100% !important;
+    gap: 16px !important;
+
+    overflow: visible !important;
+
+    padding: 3px 0 13px !important;
+
+    scroll-snap-type: none !important;
+  }
+
+  .about-v2__law-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 330px !important;
+
+    scroll-snap-align: none !important;
+  }
+
+  .about-v2__law-card > div:not(.about-v2__pdf-actions) {
+    min-width: 0;
+  }
+
+  .about-v2__law-card h3,
+  .about-v2__law-card p,
+  .about-v2__law-label {
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  .about-v2__pdf-actions {
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    margin-top: auto !important;
+  }
+
+  .about-v2__pdf-button {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 48px !important;
+    padding: 11px 12px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+/* HP: satu dokumen per baris, lebar penuh. */
+@media (max-width: 640px) {
+  .about-v2__law-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    grid-auto-columns: auto !important;
+
+    gap: 16px !important;
+  }
+
+  .about-v2__law-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    padding: 20px !important;
+    border-radius: 19px !important;
+  }
+
+  .about-v2__law-label {
+    margin-top: 20px !important;
+  }
+
+  .about-v2__law-card h3 {
+    font-size: 1.08rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .about-v2__law-card p {
+    font-size: 0.82rem !important;
+    line-height: 1.6 !important;
   }
 }
